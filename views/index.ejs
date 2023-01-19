@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Upload</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+<body>
+  <h2>Upload Images</h2>
+
+  <section class="choose-image">
+    <form action="/images/save" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required>
+      <input type="text" name="description" placeholder="Description" required>
+      <button type="submit" name="submit">UPLOAD</button>
+    </form>
+  </section>
+  <section class="image-grid">
+    <% for (let i = 0; i < images.length; i++) { %>
+      <article> 
+          <div class="image-box">
+            <img src="/images/<%=`${images[i].file_name}` %>">
+          </div>
+          <p><%= images[i].description %></p> 
+        </article>
+    <% } %> 
+  </section>
+</body>
+</html>

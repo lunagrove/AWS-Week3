@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+img {
+    border: 2px solid black;
+    width: auto;
+}
+
+.image-box {
+    margin-top: 20px;
+}
+
+button {
+    height: 26px;
+    border-width: 1px;
+}
+
+input {
+    height: 22px;
+    width: 250px;
+}
+
+input[type="file"] {
+    height: 26px;
+}
