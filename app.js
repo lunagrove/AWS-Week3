@@ -8,8 +8,6 @@ const multer = require('multer')
 const upload = multer({ dest: 'public/images/' })
 const fs = require('fs')
 
-let images = []
-
 app.set("view engine", "ejs")
 app.use(express.urlencoded({extended: true}))
 
@@ -33,11 +31,8 @@ app.post('/images/save', upload.single('image'), async (req, res) => {
   const description = req.body.description
 
   const result = await database.addImage(imageName, description)
-  images.unshift(result)
 
-  res.render("index", { images })
-
-  //res.redirect("/");
+  res.redirect("/");
 
 })
 
